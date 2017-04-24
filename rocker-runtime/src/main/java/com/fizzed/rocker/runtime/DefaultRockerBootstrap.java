@@ -96,7 +96,7 @@ public class DefaultRockerBootstrap implements RockerBootstrap {
     @Override
     public RockerModel model(String templatePath) throws TemplateNotFoundException, TemplateBindException {
         
-        return buildModel(templatePath, DefaultRockerBootstrap.class.getClassLoader());
+        return buildModel(templatePath, Thread.currentThread().getContextClassLoader());
 
     }
 }
